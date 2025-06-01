@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, ArrowRight } from 'lucide-react';
+import { Mail, ArrowRight } from 'lucide-react';
 
 const CallToAction: React.FC = () => {
   return (
@@ -18,20 +18,20 @@ const CallToAction: React.FC = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <Link
-                to="/cars"
+                to="/contact"
                 className="bg-white/10 hover:bg-white/20 transition-all py-4 px-6 rounded-lg flex items-center justify-center space-x-3"
               >
-                <span>Explore Collection</span>
+                <span>Ask Roya</span>
                 <ArrowRight size={18} />
               </Link>
               
-              <a
-                href="tel:+441234567890"
+              <Link
+                to="/cars"
                 className="bg-accent text-primary hover:bg-accent/90 transition-all py-4 px-6 rounded-lg flex items-center justify-center space-x-3"
               >
-                <Phone size={18} />
-                <span>+44 123 456 7890</span>
-              </a>
+                <span>Explore Collections</span>
+                <ArrowRight size={18} />
+              </Link>
               
               <a
                 href="mailto:info@royamotorsuk.com"

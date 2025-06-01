@@ -212,11 +212,11 @@ const ContactPage: React.FC = () => {
                     <p className="font-medium">Phone</p>
                     <p className="text-gray-600 mb-1">UK Office:</p>
                     <a href="tel:+441234567890" className="text-cta hover:underline">
-                      +44 123 456 7890
+                      +44 7964 595923
                     </a>
                     <p className="text-gray-600 mt-2 mb-1">East Africa Office:</p>
                     <a href="tel:+254123456789" className="text-cta hover:underline">
-                      +254 123 456 789
+                      +254 710 966523
                     </a>
                   </div>
                 </li>
@@ -270,7 +270,7 @@ const ContactPage: React.FC = () => {
               <h2 className="text-2xl font-medium mb-6">Connect With Us</h2>
               <div className="flex space-x-4 mb-6">
                 <a
-                  href="#"
+                  href="RoyaMotorsUK"
                   className="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition-colors"
                   aria-label="Facebook"
                 >
@@ -279,7 +279,7 @@ const ContactPage: React.FC = () => {
                   </svg>
                 </a>
                 <a
-                  href="#"
+                  href="RoyaMotorsUK"
                   className="bg-pink-600 text-white p-3 rounded-full hover:bg-pink-700 transition-colors"
                   aria-label="Instagram"
                 >
@@ -288,7 +288,7 @@ const ContactPage: React.FC = () => {
                   </svg>
                 </a>
                 <a
-                  href="#"
+                  href="RoyaMotorsUK"
                   className="bg-blue-400 text-white p-3 rounded-full hover:bg-blue-500 transition-colors"
                   aria-label="Twitter"
                 >
@@ -297,7 +297,7 @@ const ContactPage: React.FC = () => {
                   </svg>
                 </a>
                 <a
-                  href="#"
+                  href="RoyaMotorsUK"
                   className="bg-green-600 text-white p-3 rounded-full hover:bg-green-700 transition-colors"
                   aria-label="WhatsApp"
                 >
@@ -308,7 +308,7 @@ const ContactPage: React.FC = () => {
                 </a>
               </div>
               <a
-                href="https://wa.me/441234567890"
+                href="https://wa.me/447964595923"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn bg-green-600 hover:bg-green-700 text-white w-full flex items-center justify-center"

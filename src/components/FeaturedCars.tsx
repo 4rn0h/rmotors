@@ -11,27 +11,30 @@ const FeaturedCars: React.FC = () => {
   return (
     <section className="section bg-neutral">
       <div className="container-custom">
-        <div className="flex justify-between items-center mb-12">
-          <div>
+        <div className="mb-12 text-center">
+          <div className="max-w-3xl mx-auto">
             <h2 className="text-4xl font-heading font-medium mb-3">Featured Vehicles</h2>
-            <p className="text-gray-600 max-w-2xl">
+            <p className="text-gray-600">
               Discover our handpicked selection of exceptional luxury vehicles, each
               representing the pinnacle of automotive excellence.
             </p>
           </div>
-          <Link
-            to="/cars"
-            className="hidden md:flex items-center text-cta hover:text-cta/80 font-medium transition-colors"
-          >
-            View All Collection
-            <ChevronRight size={20} className="ml-1" />
-          </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {featuredCars.map((car) => (
             <CarCard key={car.id} car={car} />
           ))}
+        </div>
+
+        <div className="mt-12 flex justify-center">
+          <Link
+            to="/cars"
+            className="flex items-center text-cta hover:text-cta/80 font-medium transition-colors text-lg"
+          >
+            View All Collection
+            <ChevronRight size={20} className="ml-1" />
+          </Link>
         </div>
 
         <div className="mt-10 text-center md:hidden">

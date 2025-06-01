@@ -229,7 +229,7 @@ const CarDetailPage: React.FC = () => {
 
                 <div className="flex flex-col space-y-3 mb-6">
                   <a
-                    href="https://wa.me/441234567890"
+                    href="https://wa.me/+447964595923"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn bg-green-600 hover:bg-green-700 text-white flex items-center justify-center"

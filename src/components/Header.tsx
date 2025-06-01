@@ -28,10 +28,8 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled || isMenuOpen
-          ? 'bg-primary text-white py-3 shadow-lg'
-          : 'bg-transparent text-white py-6'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-primary text-white ${
+        isScrolled || isMenuOpen ? 'py-3 shadow-lg' : 'py-6'
       }`}
     >
       <div className="container-custom flex justify-between items-center">
@@ -79,11 +77,11 @@ const Header: React.FC = () => {
         {/* CTA Button (Desktop) */}
         <div className="hidden lg:flex items-center">
           <a
-            href="tel:+441234567890"
+            href="tel:+447964595923"
             className="flex items-center px-4 py-2 bg-accent text-primary rounded font-medium hover:bg-accent/90 transition-colors"
           >
             <Phone size={18} className="mr-2" />
-            +44 123 456 7890
+            +44 7964 595923
           </a>
         </div>
 
@@ -98,7 +96,7 @@ const Header: React.FC = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-primary text-white p-4">
+        <div className="lg:hidden bg-primary-dark text-white p-4">
           <nav className="flex flex-col space-y-4">
             <Link
               to="/"
@@ -133,11 +131,11 @@ const Header: React.FC = () => {
               Contact
             </Link>
             <a
-              href="tel:+441234567890"
+              href="tel:+447964595923"
               className="flex items-center px-4 py-2 bg-accent text-primary rounded font-medium hover:bg-accent/90 transition-colors w-fit"
             >
               <Phone size={18} className="mr-2" />
-              +44 123 456 7890
+              +44 7964 595923
             </a>
           </nav>
         </div>

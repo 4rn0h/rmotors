@@ -6,7 +6,6 @@ interface Testimonial {
   name: string;
   location: string;
   quote: string;
-  image: string;
 }
 
 const testimonials: Testimonial[] = [
@@ -15,21 +14,18 @@ const testimonials: Testimonial[] = [
     name: 'Michael Odhiambo',
     location: 'Nairobi, Kenya',
     quote: 'The service from RoyaMotorsUK was exceptional from start to finish. My Range Rover arrived in pristine condition, exactly as promised. Their attention to detail and personal touch made the process seamless.',
-    image: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg',
   },
   {
     id: 2,
     name: 'Amina Salim',
     location: 'Dar es Salaam, Tanzania',
     quote: 'I was hesitant about importing a luxury vehicle, but RoyaMotorsUK guided me through every step. My Bentley arrived on time, and the team even assisted with local registration. Truly a five-star experience.',
-    image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg',
   },
   {
     id: 3,
     name: 'David Kariuki',
     location: 'Mombasa, Kenya',
     quote: 'This is my second purchase from RoyaMotorsUK, and they continue to exceed expectations. The selection of vehicles is unmatched, and their knowledge of the luxury market is impressive. Highly recommended!',
-    image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg',
   },
 ];
 
@@ -61,23 +57,13 @@ const Testimonials: React.FC = () => {
           <div className="bg-white/5 p-8 md:p-12 rounded-lg relative">
             <Quote className="text-accent absolute top-8 left-8 w-12 h-12 opacity-30" />
             
-            <div className="flex flex-col md:flex-row items-center gap-8">
-              <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden flex-shrink-0">
-                <img
-                  src={currentTestimonial.image}
-                  alt={currentTestimonial.name}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              
-              <div className="flex-1 text-center md:text-left">
-                <p className="text-lg md:text-xl italic mb-6 relative">
-                  "{currentTestimonial.quote}"
-                </p>
-                <div>
-                  <h4 className="text-xl font-medium text-accent">{currentTestimonial.name}</h4>
-                  <p className="text-gray-300">{currentTestimonial.location}</p>
-                </div>
+            <div className="text-center">
+              <p className="text-lg md:text-xl italic mb-6 relative">
+                "{currentTestimonial.quote}"
+              </p>
+              <div>
+                <h4 className="text-xl font-medium text-accent">{currentTestimonial.name}</h4>
+                <p className="text-gray-300">{currentTestimonial.location}</p>
               </div>
             </div>
           </div>

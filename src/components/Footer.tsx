@@ -20,21 +20,21 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="RoyaMotorsUK"
                 className="bg-white/10 p-2 rounded-full hover:bg-accent hover:text-primary transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram size={20} />
               </a>
               <a
-                href="#"
+                href="RoyaMotorsUK"
                 className="bg-white/10 p-2 rounded-full hover:bg-accent hover:text-primary transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook size={20} />
               </a>
               <a
-                href="#"
+                href="RoyaMotorsUK"
                 className="bg-white/10 p-2 rounded-full hover:bg-accent hover:text-primary transition-colors"
                 aria-label="Twitter"
               >
@@ -88,8 +88,8 @@ const Footer: React.FC = () => {
                 <Phone size={20} className="mr-3 text-accent mt-1" />
                 <div>
                   <p className="text-gray-300">UK Office:</p>
-                  <a href="tel:+441234567890" className="text-white hover:text-accent">
-                    +44 123 456 7890
+                  <a href="tel:+447964595923" className="text-white hover:text-accent">
+                    +44 7964 595923
                   </a>
                 </div>
               </li>
@@ -98,7 +98,7 @@ const Footer: React.FC = () => {
                 <div>
                   <p className="text-gray-300">East Africa Office:</p>
                   <a href="tel:+254123456789" className="text-white hover:text-accent">
-                    +254 123 456 789
+                    +254 710 966523
                   </a>
                 </div>
               </li>

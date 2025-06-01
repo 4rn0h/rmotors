@@ -1,15 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 
+// Import local images
+import hero1 from '../assets/images/hero/hero1.jpg';
+import hero2 from '../assets/images/hero/hero2.jpg';
+import hero3 from '../assets/images/hero/hero3.jpg';
+
+const heroImages = [hero1, hero2, hero3];
+
 const Hero: React.FC = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        (prevIndex + 1) % heroImages.length
+      );
+    }, 5000); // Change every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="relative h-screen">
       {/* Background Image with Overlay */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000"
         style={{
-          backgroundImage: "url('https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg')",
+          backgroundImage: `url(${heroImages[currentImageIndex]})`,
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/60"></div>
@@ -18,16 +37,16 @@ const Hero: React.FC = () => {
       {/* Content */}
       <div className="relative h-full flex items-center">
         <div className="container-custom">
-          <div className="max-w-2xl">
+          <div className="max-w-2xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-heading font-bold text-white mb-6 leading-tight">
               Exceptional Luxury <br />
               <span className="text-accent">Automotive</span> Excellence
             </h1>
-            <p className="text-xl text-gray-200 mb-8 leading-relaxed">
+            <p className="text-xl text-gray-200 mb-8 leading-relaxed mx-auto max-w-lg">
               Experience the finest selection of premium vehicles sourced directly from the UK
               to Kenya and Tanzania. Unparalleled quality, impeccable service.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/cars"
                 className="btn btn-primary text-white flex items-center justify-center"
