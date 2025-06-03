@@ -1,3 +1,4 @@
+// src/components/Layout.tsx
 import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
@@ -13,7 +14,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <Header />
       <main className="flex-grow">{children}</main>
       <Footer />
-      <ChatWidget />
+      {/* Wrap ChatWidget with the new container div */}
+      <div className="chat-widget-container"> 
+        <ChatWidget />
+      </div>
     </div>
   );
 };

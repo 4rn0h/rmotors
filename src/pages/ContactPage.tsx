@@ -1,3 +1,4 @@
+// src/pages/ContactPage.tsx
 import React, { useEffect, useState } from 'react';
 import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
 
@@ -88,7 +89,7 @@ const ContactPage: React.FC = () => {
           {/* Contact Form */}
           <div className="lg:col-span-2">
             <div className="bg-white p-8 rounded-lg shadow-md">
-              <h2 className="text-2xl font-medium mb-6">Get in Touch</h2>
+              <h2 className="text-2xl font-medium mb-6 text-primary">Get in Touch</h2>
               
               {isSubmitted ? (
                 <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
@@ -110,7 +111,7 @@ const ContactPage: React.FC = () => {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                      <label htmlFor="name" className="block text-sm font-medium text-primary mb-1">
                         Your Name *
                       </label>
                       <input
@@ -119,14 +120,14 @@ const ContactPage: React.FC = () => {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        className={`w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-cta/50 ${
+                        className={`w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-cta/50 text-primary ${ // Corrected: Removed inline comment
                           errors.name ? 'border-red-500' : 'border-gray-300'
                         }`}
                       />
                       {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                      <label htmlFor="email" className="block text-sm font-medium text-primary mb-1">
                         Email Address *
                       </label>
                       <input
@@ -135,7 +136,7 @@ const ContactPage: React.FC = () => {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className={`w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-cta/50 ${
+                        className={`w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-cta/50 text-primary ${ // Corrected: Removed inline comment
                           errors.email ? 'border-red-500' : 'border-gray-300'
                         }`}
                       />
@@ -144,7 +145,7 @@ const ContactPage: React.FC = () => {
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                      <label htmlFor="phone" className="block text-sm font-medium text-primary mb-1">
                         Phone Number *
                       </label>
                       <input
@@ -153,14 +154,14 @@ const ContactPage: React.FC = () => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className={`w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-cta/50 ${
+                        className={`w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-cta/50 text-primary ${ // Corrected: Removed inline comment
                           errors.phone ? 'border-red-500' : 'border-gray-300'
                         }`}
                       />
                       {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
                     </div>
                     <div>
-                      <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
+                      <label htmlFor="subject" className="block text-sm font-medium text-primary mb-1">
                         Subject
                       </label>
                       <input
@@ -169,12 +170,12 @@ const ContactPage: React.FC = () => {
                         name="subject"
                         value={formData.subject}
                         onChange={handleChange}
-                        className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cta/50"
+                        className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cta/50 text-primary" // Corrected: Removed inline comment
                       />
                     </div>
                   </div>
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="message" className="block text-sm font-medium text-primary mb-1">
                       Your Message *
                     </label>
                     <textarea
@@ -183,7 +184,7 @@ const ContactPage: React.FC = () => {
                       rows={5}
                       value={formData.message}
                       onChange={handleChange}
-                      className={`w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-cta/50 ${
+                      className={`w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-cta/50 text-primary ${ // Corrected: Removed inline comment
                         errors.message ? 'border-red-500' : 'border-gray-300'
                       }`}
                     ></textarea>
@@ -204,17 +205,17 @@ const ContactPage: React.FC = () => {
           {/* Contact Information */}
           <div>
             <div className="bg-white p-8 rounded-lg shadow-md mb-8">
-              <h2 className="text-2xl font-medium mb-6">Contact Information</h2>
+              <h2 className="text-2xl font-medium mb-6 text-primary">Contact Information</h2>
               <ul className="space-y-6">
                 <li className="flex items-start">
                   <Phone className="w-5 h-5 text-accent mt-1 mr-3" />
                   <div>
-                    <p className="font-medium">Phone</p>
-                    <p className="text-gray-600 mb-1">UK Office:</p>
+                    <p className="font-medium text-primary">Phone</p>
+                    <p className="text-primary mb-1">UK Office:</p>
                     <a href="tel:+441234567890" className="text-cta hover:underline">
                       +44 7964 595923
                     </a>
-                    <p className="text-gray-600 mt-2 mb-1">East Africa Office:</p>
+                    <p className="text-primary mt-2 mb-1">East Africa Office:</p>
                     <a href="tel:+254123456789" className="text-cta hover:underline">
                       +254 710 966523
                     </a>
@@ -223,11 +224,11 @@ const ContactPage: React.FC = () => {
                 <li className="flex items-start">
                   <Mail className="w-5 h-5 text-accent mt-1 mr-3" />
                   <div>
-                    <p className="font-medium">Email</p>
+                    <p className="font-medium text-primary">Email</p>
                     <a href="mailto:info@royamotorsuk.com" className="text-cta hover:underline">
                       info@royamotorsuk.com
                     </a>
-                    <p className="text-gray-600 mt-2 mb-1">For inquiries:</p>
+                    <p className="text-primary mt-2 mb-1">For inquiries:</p>
                     <a href="mailto:sales@royamotorsuk.com" className="text-cta hover:underline">
                       sales@royamotorsuk.com
                     </a>
@@ -236,15 +237,15 @@ const ContactPage: React.FC = () => {
                 <li className="flex items-start">
                   <MapPin className="w-5 h-5 text-accent mt-1 mr-3" />
                   <div>
-                    <p className="font-medium">Address</p>
-                    <p className="text-gray-600 mb-1">UK Headquarters:</p>
-                    <p className="text-gray-700">
+                    <p className="font-medium text-primary">Address</p>
+                    <p className="text-primary mb-1">UK Headquarters:</p>
+                    <p className="text-primary">
                       123 Luxury Lane,<br />
                       London, UK<br />
                       SW1A 1AA
                     </p>
-                    <p className="text-gray-600 mt-2 mb-1">East Africa Office:</p>
-                    <p className="text-gray-700">
+                    <p className="text-primary mt-2 mb-1">East Africa Office:</p>
+                    <p className="text-primary">
                       456 Upscale Avenue,<br />
                       Nairobi, Kenya<br />
                       00100
@@ -254,20 +255,20 @@ const ContactPage: React.FC = () => {
                 <li className="flex items-start">
                   <Clock className="w-5 h-5 text-accent mt-1 mr-3" />
                   <div>
-                    <p className="font-medium">Business Hours</p>
-                    <p className="text-gray-600 mb-1">Monday - Friday:</p>
-                    <p className="text-gray-700">9:00 AM - 6:00 PM</p>
-                    <p className="text-gray-600 mt-2 mb-1">Saturday:</p>
-                    <p className="text-gray-700">10:00 AM - 4:00 PM</p>
-                    <p className="text-gray-600 mt-2 mb-1">Sunday:</p>
-                    <p className="text-gray-700">By Appointment Only</p>
+                    <p className="font-medium text-primary">Business Hours</p>
+                    <p className="text-primary mb-1">Monday - Friday:</p>
+                    <p className="text-primary">9:00 AM - 6:00 PM</p>
+                    <p className="text-primary mt-2 mb-1">Saturday:</p>
+                    <p className="text-primary">10:00 AM - 4:00 PM</p>
+                    <p className="text-primary mt-2 mb-1">Sunday:</p>
+                    <p className="text-primary">By Appointment Only</p>
                   </div>
                 </li>
               </ul>
             </div>
 
             <div className="bg-white p-8 rounded-lg shadow-md">
-              <h2 className="text-2xl font-medium mb-6">Connect With Us</h2>
+              <h2 className="text-2xl font-medium mb-6 text-primary">Connect With Us</h2>
               <div className="flex space-x-4 mb-6">
                 <a
                   href="RoyaMotorsUK"
@@ -305,30 +306,19 @@ const ContactPage: React.FC = () => {
                     <path fillRule="evenodd" d="M21.15 2.768a1.397 1.397 0 0 0-1.16-.658 27.699 27.699 0 0 0-11.092.828c-3.262 1.05-5.806 2.843-7.47 5.566a11.133 11.133 0 0 0-1.423 8.059l.125.5-1.005 4.836a.698.698 0 0 0 .107.53.7.7 0 0 0 .462.267.686.686 0 0 0 .09.006.7.7 0 0 0 .138-.014l4.83-1 .504.123a11.129 11.129 0 0 0 2.667.32c1.87 0 3.67-.433 5.374-1.286 2.736-1.376 4.733-3.582 5.632-6.32 1.196-3.646.819-8.065-.779-10.757zm-1.331 10.298c-.755 2.307-2.412 4.148-4.675 5.28-1.993 1.004-4.128 1.268-6.2.778L8.26 19l-3.67.76.764-3.667-.124-.686c-.52-2.875-.222-5.27 1.206-7.263 1.384-1.93 3.6-3.416 6.243-4.214a26.632 26.632 0 0 1 6.593-1.165 24.2 24.2 0 0 1 2.712.05c1.346 2.256 1.545 5.96.504 9.25z" clipRule="evenodd" />
                     <path fillRule="evenodd" d="M17.183 14.059c-.473-.255-2.458-1.283-2.837-1.423-.189-.069-.327-.103-.466.106-.138.21-.534.675-.655.811-.12.137-.241.154-.448.052-.206-.103-.874-.341-1.665-1.096-.616-.578-1.032-1.29-1.153-1.507-.12-.215-.013-.332.09-.44.094-.098.206-.252.31-.379.103-.126.138-.216.207-.358.069-.142.034-.266-.018-.373-.052-.106-.466-1.182-.64-1.617-.16-.419-.34-.378-.466-.385a8.271 8.271 0 0 0-.396-.007.752.752 0 0 0-.551.258c-.19.206-.724.708-.724 1.724s.742 2 .845 2.137c.103.137 1.462 2.35 3.612 3.2 2.15.85 2.15.567 2.54.531.389-.034 1.254-.539 1.432-1.06.178-.521.178-.967.126-1.06-.053-.095-.193-.152-.396-.253z" clipRule="evenodd" />
                   </svg>
+                  Chat on WhatsApp
                 </a>
               </div>
-              <a
-                href="https://wa.me/447964595923"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn bg-green-600 hover:bg-green-700 text-white w-full flex items-center justify-center"
-              >
-                <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path fillRule="evenodd" d="M21.15 2.768a1.397 1.397 0 0 0-1.16-.658 27.699 27.699 0 0 0-11.092.828c-3.262 1.05-5.806 2.843-7.47 5.566a11.133 11.133 0 0 0-1.423 8.059l.125.5-1.005 4.836a.698.698 0 0 0 .107.53.7.7 0 0 0 .462.267.686.686 0 0 0 .09.006.7.7 0 0 0 .138-.014l4.83-1 .504.123a11.129 11.129 0 0 0 2.667.32c1.87 0 3.67-.433 5.374-1.286 2.736-1.376 4.733-3.582 5.632-6.32 1.196-3.646.819-8.065-.779-10.757zm-1.331 10.298c-.755 2.307-2.412 4.148-4.675 5.28-1.993 1.004-4.128 1.268-6.2.778L8.26 19l-3.67.76.764-3.667-.124-.686c-.52-2.875-.222-5.27 1.206-7.263 1.384-1.93 3.6-3.416 6.243-4.214a26.632 26.632 0 0 1 6.593-1.165 24.2 24.2 0 0 1 2.712.05c1.346 2.256 1.545 5.96.504 9.25z" clipRule="evenodd" />
-                  <path fillRule="evenodd" d="M17.183 14.059c-.473-.255-2.458-1.283-2.837-1.423-.189-.069-.327-.103-.466.106-.138.21-.534.675-.655.811-.12.137-.241.154-.448.052-.206-.103-.874-.341-1.665-1.096-.616-.578-1.032-1.29-1.153-1.507-.12-.215-.013-.332.09-.44.094-.098.206-.252.31-.379.103-.126.138-.216.207-.358.069-.142.034-.266-.018-.373-.052-.106-.466-1.182-.64-1.617-.16-.419-.34-.378-.466-.385a8.271 8.271 0 0 0-.396-.007.752.752 0 0 0-.551.258c-.19.206-.724.708-.724 1.724s.742 2 .845 2.137c.103.137 1.462 2.35 3.612 3.2 2.15.85 2.15.567 2.54.531.389-.034 1.254-.539 1.432-1.06.178-.521.178-.967.126-1.06-.053-.095-.193-.152-.396-.253z" clipRule="evenodd" />
-                </svg>
-                Chat on WhatsApp
-              </a>
             </div>
           </div>
-        </div>
 
-        {/* Map Section */}
-        <div className="mt-12">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h2 className="text-2xl font-medium mb-6">Our Locations</h2>
-            <div className="bg-gray-200 h-96 rounded-lg flex items-center justify-center">
-              <p className="text-gray-500">Interactive Map would be displayed here</p>
+          {/* Map Section */}
+          <div className="mt-12">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h2 className="text-2xl font-medium mb-6 text-primary">Our Locations</h2>
+              <div className="bg-gray-200 h-96 rounded-lg flex items-center justify-center">
+                <p className="text-primary">Interactive Map would be displayed here</p>
+              </div>
             </div>
           </div>
         </div>

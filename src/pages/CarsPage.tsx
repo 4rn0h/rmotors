@@ -1,3 +1,4 @@
+// src/pages/CarsPage.tsx
 import React, { useState, useEffect } from 'react';
 import { cars } from '../data/mockData';
 import CarCard from '../components/CarCard';
@@ -74,6 +75,14 @@ const CarsPage: React.FC = () => {
   const handleFilterChange = (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => {
     const { name, value } = e.target;
     setFilters((prev) => ({ ...prev, [name]: value }));
+    // Clear error when field is edited (assuming you have error state for filters)
+    // if (errors[name]) {
+    //   setErrors((prev) => {
+    //     const newErrors = { ...prev };
+    //     delete newErrors[name];
+    //     return newErrors;
+    //   });
+    // }
   };
 
   const resetFilters = () => {
@@ -111,7 +120,7 @@ const CarsPage: React.FC = () => {
                 placeholder="Search by make, model, color..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cta/50"
+                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cta/50 text-primary" // Corrected: Removed inline comment
               />
             </div>
             <button
@@ -127,10 +136,10 @@ const CarsPage: React.FC = () => {
           </div>
 
           {showFilters && (
-            <div className="bg-gray-50 p-6 rounded-lg mb-6 border border-gray-200">
+            <div className="bg-neutral p-6 rounded-lg mb-6 border border-gray-200">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div>
-                  <label htmlFor="make" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="make" className="block text-sm font-medium text-primary mb-1">
                     Make
                   </label>
                   <select
@@ -138,7 +147,7 @@ const CarsPage: React.FC = () => {
                     name="make"
                     value={filters.make}
                     onChange={handleFilterChange}
-                    className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cta/50"
+                    className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cta/50 text-primary" // Corrected: Removed inline comment
                   >
                     <option value="">All Makes</option>
                     {uniqueMakes.map((make) => (
@@ -149,7 +158,7 @@ const CarsPage: React.FC = () => {
                   </select>
                 </div>
                 <div>
-                  <label htmlFor="model" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="model" className="block text-sm font-medium text-primary mb-1">
                     Model
                   </label>
                   <select
@@ -157,7 +166,7 @@ const CarsPage: React.FC = () => {
                     name="model"
                     value={filters.model}
                     onChange={handleFilterChange}
-                    className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cta/50"
+                    className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cta/50 text-primary" // Corrected: Removed inline comment
                   >
                     <option value="">All Models</option>
                     {uniqueModels.map((model) => (
@@ -169,7 +178,7 @@ const CarsPage: React.FC = () => {
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="minPrice" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="minPrice" className="block text-sm font-medium text-primary mb-1">
                       Min Price (£)
                     </label>
                     <input
@@ -179,11 +188,11 @@ const CarsPage: React.FC = () => {
                       value={filters.minPrice}
                       onChange={handleFilterChange}
                       placeholder="Min"
-                      className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cta/50"
+                      className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cta/50 text-primary" // Corrected: Removed inline comment
                     />
                   </div>
                   <div>
-                    <label htmlFor="maxPrice" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="maxPrice" className="block text-sm font-medium text-primary mb-1">
                       Max Price (£)
                     </label>
                     <input
@@ -193,13 +202,13 @@ const CarsPage: React.FC = () => {
                       value={filters.maxPrice}
                       onChange={handleFilterChange}
                       placeholder="Max"
-                      className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cta/50"
+                      className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cta/50 text-primary" // Corrected: Removed inline comment
                     />
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="minYear" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="minYear" className="block text-sm font-medium text-primary mb-1">
                       Min Year
                     </label>
                     <input
@@ -209,11 +218,11 @@ const CarsPage: React.FC = () => {
                       value={filters.minYear}
                       onChange={handleFilterChange}
                       placeholder="Min"
-                      className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cta/50"
+                      className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cta/50 text-primary" // Corrected: Removed inline comment
                     />
                   </div>
                   <div>
-                    <label htmlFor="maxYear" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="maxYear" className="block text-sm font-medium text-primary mb-1">
                       Max Year
                     </label>
                     <input
@@ -223,14 +232,14 @@ const CarsPage: React.FC = () => {
                       value={filters.maxYear}
                       onChange={handleFilterChange}
                       placeholder="Max"
-                      className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cta/50"
+                      className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cta/50 text-primary" // Corrected: Removed inline comment
                     />
                   </div>
                 </div>
                 <div className="md:col-span-3 flex justify-end">
                   <button
                     onClick={resetFilters}
-                    className="flex items-center bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded transition-colors"
+                    className="flex items-center bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded transition-colors text-primary" // Corrected: Removed inline comment
                   >
                     <FilterX size={18} className="mr-2" />
                     Reset Filters
@@ -243,7 +252,7 @@ const CarsPage: React.FC = () => {
 
         {/* Results count */}
         <div className="mb-6">
-          <p className="text-gray-600">
+          <p className="text-neutral">
             Showing {filteredCars.length} {filteredCars.length === 1 ? 'vehicle' : 'vehicles'}
           </p>
         </div>
@@ -260,8 +269,8 @@ const CarsPage: React.FC = () => {
             <div className="bg-gray-100 p-8 rounded-lg inline-block mb-4">
               <Search size={48} className="text-gray-400 mx-auto" />
             </div>
-            <h2 className="text-2xl font-medium mb-2">No vehicles found</h2>
-            <p className="text-gray-600 mb-6">
+            <h2 className="text-2xl font-medium mb-2 text-primary">No vehicles found</h2>
+            <p className="text-primary mb-6">
               We couldn't find any vehicles matching your current filters.
             </p>
             <button onClick={resetFilters} className="btn btn-primary">

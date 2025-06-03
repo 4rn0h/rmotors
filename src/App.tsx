@@ -1,3 +1,4 @@
+// src/App.tsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
@@ -8,6 +9,7 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsPage from './pages/TermsPage';
+import SophisticatedEdgePreviewPage from './pages/SophisticatedEdgePreviewPage'; // <--- ADD THIS IMPORT
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy" element={<PrivacyPolicyPage />} />
           <Route path="/terms" element={<TermsPage />} />
+          {/* <--- ADD NEW ROUTE */}
+          <Route path="/color-schemes/sophisticated-edge" element={<SophisticatedEdgePreviewPage />} /> 
         </Routes>
       </Layout>
     </Router>

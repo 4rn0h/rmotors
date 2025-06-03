@@ -1,3 +1,4 @@
+// src/pages/HomePage.tsx
 import React, { useEffect } from 'react';
 import Hero from '../components/Hero';
 import FeaturedCars from '../components/FeaturedCars';
@@ -19,11 +20,11 @@ const HomePage: React.FC = () => {
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-heading font-medium mb-6">
+              <h2 className="text-3xl md:text-4xl font-heading font-medium mb-6 text-primary"> {/* <--- ADDED text-primary */}
                 From the UK to East Africa: <br />
                 <span className="text-accent">A Seamless Experience</span>
               </h2>
-              <p className="text-gray-700 mb-6">
+              <p className="text-gray-700 mb-6"> {/* This text-gray-700 on bg-neutral should be visible */}
                 At RoyaMotorsUK, we specialize in connecting discerning clients in Kenya and
                 Tanzania with the finest luxury vehicles sourced directly from the UK. Our
                 comprehensive service covers every aspect of your luxury car acquisition.
@@ -35,7 +36,7 @@ const HomePage: React.FC = () => {
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <div>
+                  <div className="text-primary"> {/* <--- ADDED text-primary */}
                     <strong className="font-medium">Expert Selection:</strong> We personally
                     inspect each vehicle to ensure it meets our exacting standards.
                   </div>
@@ -46,7 +47,7 @@ const HomePage: React.FC = () => {
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <div>
+                  <div className="text-primary"> {/* <--- ADDED text-primary */}
                     <strong className="font-medium">Seamless Shipping:</strong> We handle all
                     logistics, from UK export to East African import procedures.
                   </div>
@@ -57,7 +58,7 @@ const HomePage: React.FC = () => {
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <div>
+                  <div className="text-primary"> {/* <--- ADDED text-primary */}
                     <strong className="font-medium">Customs Expertise:</strong> Our specialists
                     navigate all documentation and clearance requirements.
                   </div>
@@ -68,7 +69,7 @@ const HomePage: React.FC = () => {
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <div>
+                  <div className="text-primary"> {/* <--- ADDED text-primary */}
                     <strong className="font-medium">Door-to-Door Delivery:</strong> Your vehicle
                     arrives at your specified location in pristine condition.
                   </div>
@@ -84,11 +85,11 @@ const HomePage: React.FC = () => {
               <div className="mt-6 flex flex-col sm:flex-row gap-4">
                 <div className="flex-1 border-l-4 border-accent pl-4">
                   <p className="text-4xl font-bold text-primary">100%</p>
-                  <p className="text-gray-600">Secure Transactions</p>
+                  <p className="text-gray-600 text-primary">Secure Transactions</p> {/* <--- ADDED text-primary */}
                 </div>
                 <div className="flex-1 border-l-4 border-accent pl-4">
                   <p className="text-4xl font-bold text-primary">250+</p>
-                  <p className="text-gray-600">Satisfied Clients</p>
+                  <p className="text-gray-600 text-primary">Satisfied Clients</p> {/* <--- ADDED text-primary */}
                 </div>
               </div>
             </div>

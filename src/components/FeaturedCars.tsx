@@ -1,7 +1,8 @@
+// src/components/FeaturedCars.tsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { cars } from '../data/mockData';
-import CarCard from './CarCard';
+import { cars } from '../data/mockData'; // Assuming this exists
+import CarCard from './CarCard'; // Assuming this exists
 import { ChevronRight } from 'lucide-react';
 
 const FeaturedCars: React.FC = () => {
@@ -13,8 +14,8 @@ const FeaturedCars: React.FC = () => {
       <div className="container-custom">
         <div className="mb-12 text-center">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-4xl font-heading font-medium mb-3">Featured Vehicles</h2>
-            <p className="text-gray-600">
+            <h2 className="text-4xl font-heading font-medium mb-3 text-primary">Featured Vehicles</h2> {/* <--- ADDED text-primary */}
+            <p className="text-gray-600 text-primary"> {/* <--- ADDED text-primary */}
               Discover our handpicked selection of exceptional luxury vehicles, each
               representing the pinnacle of automotive excellence.
             </p>
