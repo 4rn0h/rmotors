@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Instagram, Facebook, Twitter } from 'lucide-react';
+import { Phone, Mail, MapPin, Instagram, Facebook, Twitter, Landmark } from 'lucide-react'; // Landmark for bank transfer
 import Logo from './Logo';
 
 const Footer: React.FC = () => {
@@ -20,21 +20,27 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="RoyaMotorsUK"
+                href="https://instagram.com/RoyaMotorsUK"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-white/10 p-2 rounded-full hover:bg-accent hover:text-primary transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram size={20} />
               </a>
               <a
-                href="RoyaMotorsUK"
+                href="https://facebook.com/RoyaMotorsUK"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-white/10 p-2 rounded-full hover:bg-accent hover:text-primary transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook size={20} />
               </a>
               <a
-                href="RoyaMotorsUK"
+                href="https://twitter.com/RoyaMotorsUK"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-white/10 p-2 rounded-full hover:bg-accent hover:text-primary transition-colors"
                 aria-label="Twitter"
               >
@@ -97,7 +103,7 @@ const Footer: React.FC = () => {
                 <Phone size={20} className="mr-3 text-accent mt-1" />
                 <div>
                   <p className="text-gray-300">East Africa Office:</p>
-                  <a href="tel:+254123456789" className="text-white hover:text-accent">
+                  <a href="tel:+254710966523" className="text-white hover:text-accent">
                     +254 710 966523
                   </a>
                 </div>
@@ -111,13 +117,14 @@ const Footer: React.FC = () => {
               <li className="flex items-start">
                 <MapPin size={20} className="mr-3 text-accent mt-1 flex-shrink-0" />
                 <span className="text-gray-300">
-                  123 Luxury Lane, London, UK SW1A 1AA
+                  39 Kinross drive,Bletchley, 
+                  Milton Keynes,MK3 7UF
                 </span>
               </li>
             </ul>
           </div>
 
-          {/* Business Hours */}
+          {/* Business Hours and Payment Methods */}
           <div>
             <h4 className="text-lg font-medium mb-4">Business Hours</h4>
             <ul className="space-y-2">
@@ -137,9 +144,32 @@ const Footer: React.FC = () => {
             <div className="mt-6">
               <h4 className="text-lg font-medium mb-2">We Accept</h4>
               <div className="flex items-center space-x-3">
-                <div className="bg-white/10 px-3 py-1 rounded text-sm">Visa</div>
-                <div className="bg-white/10 px-3 py-1 rounded text-sm">MasterCard</div>
-                <div className="bg-white/10 px-3 py-1 rounded text-sm">Bank Transfer</div>
+                {/* Visa Logo (Revised Inline SVG) */}
+                <div className="bg-white/10 p-2 rounded text-sm flex items-center justify-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 384 256"
+                    fill="currentColor"
+                    className="h-6 w-auto text-white" /* Changed w-6 to w-auto to maintain aspect ratio */
+                  >
+                    <path d="M378.1 106.6H315c-1.3 0-2.3.4-3.2 1.2L255 186.2l-24.1-60.3c-.9-2.2-2.1-3.2-3.4-3.2H170.8c-1.3 0-2.3.4-3.2 1.2L110 186.2 85.9 125.9c-.9-2.2-2.1-3.2-3.4-3.2H25.9c-1.3 0-2.3.4-3.2 1.2L0 178.6V106.6H25.9c1.3 0 2.3-.4 3.2-1.2l32.1-80.3c.9-2.2 2.1-3.2 3.4-3.2H147.2c1.3 0 2.3.4 3.2 1.2l32.1 80.3 24.1-60.3c.9-2.2 2.1-3.2 3.4-3.2H315c1.3 0 2.3.4 3.2 1.2l32.1 80.3 24.1-60.3c.9-2.2 2.1-3.2 3.4-3.2H378.1zM195.2 208.4H147.2c-1.3 0-2.3-.4-3.2-1.2L110 137.8h32.1l24.1 60.3c.9 2.2 2.1 3.2 3.4 3.2z" />
+                  </svg>
+                </div>
+                {/* MasterCard Logo (Revised Inline SVG) */}
+                <div className="bg-white/10 p-2 rounded text-sm flex items-center justify-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="h-6 w-auto text-white" /* Changed w-6 to w-auto to maintain aspect ratio */
+                  >
+                    <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8zM12 4c-3.309 0-6 2.691-6 6s2.691 6 6 6 6-2.691 6-6-2.691-6-6-6zm0 10c-2.206 0-4-1.794-4-4s1.794-4 4-4 4 1.794 4 4-1.794 4-4 4zM12 6c-1.103 0-2 .897-2 2s.897 2 2 2 2-.897 2-2-.897-2-2-2z" />
+                  </svg>
+                </div>
+                {/* Bank Transfer Logo (Lucide Icon) */}
+                <div className="bg-white/10 p-2 rounded text-sm flex items-center justify-center">
+                  <Landmark size={24} className="text-white" />
+                </div>
               </div>
             </div>
           </div>

@@ -32,49 +32,67 @@ const Header: React.FC = () => {
         isScrolled || isMenuOpen ? 'py-3 shadow-lg' : 'py-6'
       }`}
     >
-      <div className="container-custom flex justify-between items-center">
-        <Link to="/" className="flex items-center">
+      <div className="container-custom flex justify-between items-center relative"> {/* Added relative for absolute positioning of mobile name */}
+        {/* Logo (remains on the far left) */}
+        <Link to="/" className="flex items-center z-10"> {/* Added z-10 to keep logo above mobile name if they overlap */}
           <Logo />
-          <span className="ml-2 text-xl font-heading">RoyaMotorsUK</span>
         </Link>
 
+        {/* Mobile-only RoyaMotorsUK Text (Centered) */}
+        {/* Visible only on screens smaller than 'lg' */}
+        <span className="lg:hidden text-xl font-heading text-white absolute left-1/2 -translate-x-1/2 z-0">
+          RoyaMotorsUK
+        </span>
+
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center space-x-8">
-          <Link
-            to="/"
-            className={`font-medium transition-colors hover:text-accent ${
-              location.pathname === '/' ? 'text-accent' : ''
-            }`}
-          >
-            Home
-          </Link>
-          <Link
-            to="/cars"
-            className={`font-medium transition-colors hover:text-accent ${
-              location.pathname === '/cars' ? 'text-accent' : ''
-            }`}
-          >
-            Our Collection
-          </Link>
-          <Link
-            to="/about"
-            className={`font-medium transition-colors hover:text-accent ${
-              location.pathname === '/about' ? 'text-accent' : ''
-            }`}
-          >
-            About Us
-          </Link>
-          <Link
-            to="/contact"
-            className={`font-medium transition-colors hover:text-accent ${
-              location.pathname === '/contact' ? 'text-accent' : ''
-            }`}
-          >
-            Contact
-          </Link>
+        {/* Hidden on screens smaller than 'lg', flex on 'lg' and up */}
+        <nav className="hidden lg:flex items-center flex-grow justify-center">
+          {/* Left Nav Group */}
+          <div className="flex space-x-8 mr-8"> {/* Added mr-8 for spacing before desktop center text */}
+            <Link
+              to="/"
+              className={`font-medium transition-colors hover:text-accent ${
+                location.pathname === '/' ? 'text-accent' : ''
+              }`}
+            >
+              Home
+            </Link>
+            <Link
+              to="/cars"
+              className={`font-medium transition-colors hover:text-accent ${
+                location.pathname === '/cars' ? 'text-accent' : ''
+              }`}
+            >
+              Our Collection
+            </Link>
+          </div>
+
+          {/* Desktop-only RoyaMotorsUK Text (Centered within desktop nav) */}
+          {/* Visible only on 'lg' and up */}
+          <span className="text-xl font-heading text-white mx-8">ROYAMOTORSUK</span> {/* Added mx-8 for spacing */}
+
+          {/* Right Nav Group */}
+          <div className="flex space-x-8 ml-8"> {/* Added ml-8 for spacing after desktop center text */}
+            <Link
+              to="/about"
+              className={`font-medium transition-colors hover:text-accent ${
+                location.pathname === '/about' ? 'text-accent' : ''
+              }`}
+            >
+              About Us
+            </Link>
+            <Link
+              to="/contact"
+              className={`font-medium transition-colors hover:text-accent ${
+                location.pathname === '/contact' ? 'text-accent' : ''
+              }`}
+            >
+              Contact
+            </Link>
+          </div>
         </nav>
 
-        {/* CTA Button (Desktop) */}
+        {/* CTA Button (Desktop - remains on the far right) */}
         <div className="hidden lg:flex items-center">
           <a
             href="tel:+447964595923"
@@ -85,16 +103,16 @@ const Header: React.FC = () => {
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button (remains on the far right) */}
         <button
-          className="lg:hidden text-white"
+          className="lg:hidden text-white z-10" // Added z-10 to ensure it's clickable
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu (slides down) */}
       {isMenuOpen && (
         <div className="lg:hidden bg-primary-dark text-white p-4">
           <nav className="flex flex-col space-y-4">

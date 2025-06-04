@@ -1,12 +1,16 @@
+/* src/index.css */
+
+/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
+/* Import Tailwind CSS directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    /* Sophisticated Edge Color Scheme */
+    /* Sophisticated Edge Color Scheme - Using RGB values for Tailwind JIT compatibility */
     --primary: 13 13 13; /* #0D0D0D - Near Black (Dominant Base) */
     --accent: 255 59 48; /* #FF3B30 - Fire Red (Primary Accent) */
     --secondary: 255 200 0; /* #FFC800 - Amber Yellow (Secondary Accent) */
@@ -21,7 +25,10 @@
 
   body {
     /* Apply new primary background and neutral text color */
+    /* Tailwind will automatically use the --primary and --neutral custom properties if configured in tailwind.config.js */
     @apply font-body text-neutral bg-primary; 
+    /* Ensure the body takes full height for proper layout */
+    min-height: 100vh; 
   }
 
   h1, h2, h3, h4, h5, h6 {
