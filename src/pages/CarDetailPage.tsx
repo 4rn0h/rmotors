@@ -1,4 +1,3 @@
-// src/pages/CarDetailPage.tsx
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { cars } from '../data/mockData';
@@ -45,8 +44,8 @@ const CarDetailPage: React.FC = () => {
     return (
       <div className="pt-24 pb-16">
         <div className="container-custom text-center py-16">
-          <h1 className="text-3xl font-medium mb-4 text-primary">Vehicle Not Found</h1>
-          <p className="text-primary mb-6">The vehicle you are looking for is not available.</p>
+          <h1 className="text-3xl font-medium mb-4">Vehicle Not Found</h1>
+          <p className="text-gray-600 mb-6">The vehicle you are looking for is not available.</p>
           <Link to="/cars" className="btn btn-primary">
             Return to Collection
           </Link>
@@ -61,7 +60,7 @@ const CarDetailPage: React.FC = () => {
       <div className="container-custom mb-6">
         <Link
           to="/cars"
-          className="inline-flex items-center text-primary hover:text-accent transition-colors" // Removed the comment here
+          className="inline-flex items-center text-gray-600 hover:text-primary transition-colors"
         >
           <ArrowLeft size={18} className="mr-2" />
           Back to Collection
@@ -211,10 +210,10 @@ const CarDetailPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column - Summary and Enquiry */}
-          <div>
+          {/* Right Column - Summary and Additional Info */}
+          <div className="space-y-6">
             {/* Summary Card */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <div className="p-6">
                 <h1 className="text-3xl font-medium mb-2 text-primary">
                   {car.make} {car.model}
@@ -256,22 +255,68 @@ const CarDetailPage: React.FC = () => {
                     Share
                   </button>
                 </div>
+              </div>
+            </div>
 
-                {/* Additional Info */}
-                <div className="space-y-4 text-primary">
-                  <div className="flex items-center">
-                    <DollarSign size={20} className="mr-3 text-accent" />
-                    <div>
-                      <p className="font-medium">Financing Available</p>
-                      <p className="text-sm">Flexible options to suit your budget.</p>
-                    </div>
+            {/* Additional Info Cards - Enhanced Visibility */}
+            <div className="bg-white rounded-lg shadow-md overflow-hidden border border-accent/20">
+              <div className="p-6">
+                <h3 className="text-xl font-medium mb-4 flex items-center">
+                  <DollarSign size={20} className="mr-2 text-accent" />
+                  <span className="text-primary">Payment Information</span>
+                </h3>
+                <p className="text-gray-700 mb-4">
+                  We offer flexible payment options including bank transfer, credit card, and
+                  financing arrangements.
+                </p>
+                <div className="bg-accent/5 p-3 rounded border border-accent/10 mb-4">
+                  <p className="text-sm text-gray-700">
+                    Price shown is in GBP. Contact us for pricing in KES, TZS, or USD.
+                  </p>
+                </div>
+                <Link 
+                  to="/contact" 
+                  className="text-accent hover:underline font-medium flex items-center"
+                >
+                  Contact us for payment details
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    className="h-4 w-4 ml-1" 
+                    viewBox="0 0 20 20" 
+                    fill="currentColor"
+                  >
+                    <path 
+                      fillRule="evenodd" 
+                      d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" 
+                      clipRule="evenodd" 
+                    />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-md overflow-hidden border border-accent/20">
+              <div className="p-6">
+                <h3 className="text-xl font-medium mb-4 flex items-center">
+                  <Truck size={20} className="mr-2 text-accent" />
+                  <span className="text-primary">Shipping & Delivery</span>
+                </h3>
+                <p className="text-gray-700 mb-4">
+                  We provide comprehensive shipping services from the UK to Kenya and Tanzania,
+                  including all customs clearance and documentation.
+                </p>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between py-2 border-b border-gray-100">
+                    <span className="text-gray-700">Estimated Shipping Time:</span>
+                    <span className="font-medium text-primary">4-6 weeks</span>
                   </div>
-                  <div className="flex items-center">
-                    <Truck size={20} className="mr-3 text-accent" />
-                    <div>
-                      <p className="font-medium">Worldwide Shipping</p>
-                      <p className="text-sm">Door-to-door delivery to East Africa.</p>
-                    </div>
+                  <div className="flex items-center justify-between py-2 border-b border-gray-100">
+                    <span className="text-gray-700">Shipping Insurance:</span>
+                    <span className="font-medium text-primary">Included</span>
+                  </div>
+                  <div className="flex items-center justify-between py-2">
+                    <span className="text-gray-700">Delivery Location:</span>
+                    <span className="font-medium text-primary">To Your Door</span>
                   </div>
                 </div>
               </div>

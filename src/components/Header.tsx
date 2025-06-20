@@ -32,23 +32,21 @@ const Header: React.FC = () => {
         isScrolled || isMenuOpen ? 'py-3 shadow-lg' : 'py-6'
       }`}
     >
-      <div className="container-custom flex justify-between items-center relative"> {/* Added relative for absolute positioning of mobile name */}
-        {/* Logo (remains on the far left) */}
-        <Link to="/" className="flex items-center z-10"> {/* Added z-10 to keep logo above mobile name if they overlap */}
+      <div className="container-custom flex justify-between items-center relative">
+        {/* Logo */}
+        <Link to="/" className="flex items-center z-10">
           <Logo />
         </Link>
 
-        {/* Mobile-only RoyaMotorsUK Text (Centered) */}
-        {/* Visible only on screens smaller than 'lg' */}
-        <span className="lg:hidden text-xl font-heading text-white absolute left-1/2 -translate-x-1/2 z-0">
-          RoyaMotorsUK
+        {/* Brand Name - Mobile */}
+        <span className="lg:hidden text-xl font-heading font-bold tracking-wide text-white absolute left-1/2 transform -translate-x-1/2 whitespace-nowrap">
+          ROYAMOTORSUK
         </span>
 
         {/* Desktop Navigation */}
-        {/* Hidden on screens smaller than 'lg', flex on 'lg' and up */}
-        <nav className="hidden lg:flex items-center flex-grow justify-center">
+        <nav className="hidden lg:flex items-center gap-8 flex-grow justify-center">
           {/* Left Nav Group */}
-          <div className="flex space-x-8 mr-8"> {/* Added mr-8 for spacing before desktop center text */}
+          <div className="flex space-x-8">
             <Link
               to="/"
               className={`font-medium transition-colors hover:text-accent ${
@@ -67,12 +65,13 @@ const Header: React.FC = () => {
             </Link>
           </div>
 
-          {/* Desktop-only RoyaMotorsUK Text (Centered within desktop nav) */}
-          {/* Visible only on 'lg' and up */}
-          <span className="text-xl font-heading text-white mx-8">ROYAMOTORSUK</span> {/* Added mx-8 for spacing */}
+          {/* Brand Name - Desktop */}
+          <span className="text-xl font-heading font-bold tracking-wide text-white px-8 whitespace-nowrap">
+            ROYAMOTORSUK
+          </span>
 
           {/* Right Nav Group */}
-          <div className="flex space-x-8 ml-8"> {/* Added ml-8 for spacing after desktop center text */}
+          <div className="flex space-x-8">
             <Link
               to="/about"
               className={`font-medium transition-colors hover:text-accent ${
@@ -92,8 +91,8 @@ const Header: React.FC = () => {
           </div>
         </nav>
 
-        {/* CTA Button (Desktop - remains on the far right) */}
-        <div className="hidden lg:flex items-center">
+        {/* CTA Button (Desktop) */}
+        <div className="hidden lg:flex items-center ml-8">
           <a
             href="tel:+447964595923"
             className="flex items-center px-4 py-2 bg-accent text-primary rounded font-medium hover:bg-accent/90 transition-colors"
@@ -103,16 +102,16 @@ const Header: React.FC = () => {
           </a>
         </div>
 
-        {/* Mobile Menu Button (remains on the far right) */}
+        {/* Mobile Menu Button */}
         <button
-          className="lg:hidden text-white z-10" // Added z-10 to ensure it's clickable
+          className="lg:hidden text-white z-10"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile Menu (slides down) */}
+      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="lg:hidden bg-primary-dark text-white p-4">
           <nav className="flex flex-col space-y-4">
